@@ -19,7 +19,7 @@ exports.run = async (bot, message) => {
                 var newmoney = Math.floor(userdata.money + rewardamount) 
                 
                 poolQuery(`UPDATE econ SET money = '${newmoney}' WHERE userid = '${userid}'`).then(()=>{
-                    bot.guilds.get("379115766127001600").channels.get("476624950048849920").send(`${message.author.username} now has ${newmoney} Souls`)
+                    bot.guilds.get("379115766127001600").channels.get("476624950048849920").send(`${message.author.username} now has ${newmoney} Cookies`)
                 });//insert catch here if update of user fails
             }
         });
