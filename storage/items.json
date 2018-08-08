@@ -1,0 +1,8 @@
+{
+    "Ping": {
+        "name":"Ping command",
+        "type":"Command",
+        "desc":"Buying this gives you access to the ping command."
+    }
+
+}

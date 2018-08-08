@@ -1,0 +1,4 @@
+config.json
+*.sqlite
+heroku creds.txt
+node_modules
