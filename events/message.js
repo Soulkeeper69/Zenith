@@ -8,7 +8,7 @@ exports.run = async (bot, message) => {
     const connect = async function () {
         poolQuery(`SELECT * FROM econ WHERE userid = '${userid}'`).then(result =>{
             if(Object.keys(result).length == 0) {
-                poolQuery(`INSERT INTO econ (userid,userName,money,lastMessage) VALUES ('${userid}','${message.author.username}',2500,'${messagetime}')`).then(()=>{
+                poolQuery(`INSERT INTO econ (userid,userName,money,lastDaily,lastMessage) VALUES ('${userid}','${message.author.username}',2500,0,'${messagetime}')`).then(()=>{
                     message.channel.send(`${message.author.username} your profile has been created :tada:`)
                     connect();
                 }).catch(() => {
