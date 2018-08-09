@@ -168,5 +168,5 @@ bot.on(`ready`, () => {
 
 })
 
-bot.token(`NDY5MjYxMzM0MzMzMDk1OTQ3.DkaAxQ.rZAceTgavlcBS-NfQAENF_iOgws`)
+
 
