@@ -22,7 +22,7 @@ exports.run = async (bot, message) => {
                 var timesincemessage = Math.floor(messagetime - userdata.lastMessage) / 1000
                 if (timesincemessage >= 20){
                     poolQuery(`UPDATE econ SET money = '${newmoney}', lastMessage = '${messagetime}' WHERE userid = '${userid}'`).then(()=>{
-                        bot.guilds.get("379115766127001600").channels.get("476624950048849920").send(`${message.author.username} now has ${newmoney} Souls`)
+                        bot.guilds.get("379115766127001600").channels.get("479416436121403404").send(`${message.author.username} now has ${newmoney} Souls`)
                     }).catch(() => {
                         console.log(`${message.author.username} Profile Failed To Update`)
                     });
