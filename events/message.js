@@ -1,6 +1,7 @@
 const discord = require(`discord.js`);
 const mysql = require("mysql");
 const poolQuery = require('./../functions/poolQuery');
+const fs = require(`fs`)
 exports.run = async (bot, message) => {
     if (message.author.bot)return;
     const userid = message.author.id
@@ -32,3 +33,21 @@ exports.run = async (bot, message) => {
     }   
     connect();   
 }
+
+fs.readdir("./commands/", (err, files) => {
+
+    if(err) console.log(err);
+  
+    let jsfile = files.filter(f => f.split(".").pop() === "js")
+    if(jsfile.length <= 0){
+      console.log("Couldn't find commands.");
+      return;
+    }
+  
+    jsfile.forEach((f, i) =>{
+      let props = require(`./commands/${f}`);
+      console.log(`${f} loaded!`);
+      bot.commands.set(props.help.name, props);
+    });
+  
+  });
