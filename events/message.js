@@ -51,3 +51,9 @@ fs.readdir("./commands/", (err, files) => {
     });
   
   });
+
+  let commandfile = bot.commands.get(command.slice(prefix.length));
+  if(commandfile) commandfile.run(bot,message,args);
+  let content = message.content.split(" ");
+  let command = content[0];
+  let args = content.slice(1);
