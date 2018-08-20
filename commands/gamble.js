@@ -18,7 +18,7 @@ exports.run = async(bot,message,args) => {
     
         var number = Math.floor(Math.random() * 100 + 1);
 
-        if (number > 50){
+        if (number > 70){
             var embed = new Discord.RichEmbed()
             .setAuthor(message.author.tag)
             .setTitle("You Won!")
