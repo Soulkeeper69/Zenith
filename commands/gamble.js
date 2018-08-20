@@ -13,7 +13,7 @@ exports.run = async(bot,message,args) => {
 
         if (isNaN(moneyBet))return message.reply("Bet must be a number, Not a letter!")
 
-        if (currentmoney < moneyBet);
+        if (currentmoney < moneyBet)
         return message.channel.send("You dont have enough Souls for that bet");
     
         var number = Math.floor(Math.random() * 100 + 1);
