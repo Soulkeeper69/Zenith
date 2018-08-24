@@ -15,8 +15,12 @@ exports.run = async(bot,message,args) => {
         if (currentmoney < moneyBet)
         return message.channel.send("You dont have enough Souls for that bet");
     
-        var number = Math.floor(Math.random() * 100 + 1);
+        
+        message.channel.send(`Rolling the dice...`).then(msg=> {
+            var number = Math.floor(Math.random() * 100 + 1);
 
+            msg.edit("You rolled " + number)
+        })
         
 
         if (number > 70){ 
